@@ -121,25 +121,7 @@ function initializeSmoothScrolling() {
     });
 }
 
-function scrollToStudies() {
-    const studiesSection = document.getElementById('studies');
-    if (studiesSection) {
-        studiesSection.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-        });
-    }
-}
-
-function scrollToContact() {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-        contactSection.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-        });
-    }
-}
+// Scroll functions removed - no longer needed with focused layout
 
 // Form Handling
 function initializeForm() {
