@@ -20,9 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize form handling
     initializeForm();
     
-    // Add smooth scrolling for anchor links
-    initializeSmoothScrolling();
-    
     // Add fade-in animations
     addFadeInAnimations();
 });
@@ -110,19 +107,6 @@ function updateFormLanguage(lang) {
     });
 }
 
-// Smooth Scrolling Functions
-function initializeSmoothScrolling() {
-    // Handle smooth scrolling for buttons
-    const scrollButtons = document.querySelectorAll('[onclick*="scrollTo"]');
-    scrollButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-        });
-    });
-}
-
-// Scroll functions removed - no longer needed with focused layout
-
 // Form Handling
 function initializeForm() {
     const form = document.getElementById('contactForm');
@@ -152,9 +136,11 @@ function handleFormSubmit(e) {
     const data = Object.fromEntries(formData.entries());
     
     // Show loading state
-    const submitBtn = e.target.querySelector('.btn-submit');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = currentLanguage === 'en' ? 'Sending...' : 'Enviando...';
+    const submitBtn = e.target.querySelector('.submit-btn');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = currentLanguage === 'en' 
+        ? '<i class="fas fa-spinner fa-spin"></i> Sending...' 
+        : '<i class="fas fa-spinner fa-spin"></i> Enviando...';
     submitBtn.disabled = true;
     
     // Simulate form submission (replace with actual API call)
@@ -165,13 +151,13 @@ function handleFormSubmit(e) {
         // Show success message
         showNotification(
             currentLanguage === 'en' 
-                ? 'Thank you! We will contact you soon.' 
-                : '¡Gracias! Te contactaremos pronto.',
+                ? 'Thank you! We will contact you within 24 hours.' 
+                : '¡Gracias! Te contactaremos dentro de 24 horas.',
             'success'
         );
         
         // Reset button
-        submitBtn.textContent = originalText;
+        submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
         
         // Clear any error states
@@ -229,7 +215,7 @@ function validateField(e) {
     // Age validation
     if (fieldName === 'childAge' && value) {
         const age = parseInt(value);
-        if (isNaN(age) || age < 4 || age > 6) {
+        if (isNaN(age) || age < 4 || age > 5) {
             showFieldError(field, getErrorMessage('age', fieldName));
             return false;
         }
@@ -252,15 +238,18 @@ function showFieldError(field, message) {
     const errorDiv = document.createElement('div');
     errorDiv.className = 'field-error';
     errorDiv.textContent = message;
-    errorDiv.style.color = '#ff6b6b';
-    errorDiv.style.fontSize = '0.9rem';
-    errorDiv.style.marginTop = '5px';
+    errorDiv.style.cssText = `
+        color: #dc2626;
+        font-size: 0.8rem;
+        margin-top: 5px;
+        font-weight: 500;
+    `;
     
     formGroup.appendChild(errorDiv);
     
     // Add error styling
-    field.style.borderColor = '#ff6b6b';
-    field.style.boxShadow = '0 0 0 3px rgba(255, 107, 107, 0.2)';
+    field.style.borderColor = '#dc2626';
+    field.style.boxShadow = '0 0 0 3px rgba(220, 38, 38, 0.1)';
 }
 
 function clearFieldError(e) {
@@ -296,13 +285,13 @@ function getErrorMessage(type, fieldName) {
             required: 'This field is required',
             email: 'Please enter a valid email address',
             phone: 'Please enter a valid phone number',
-            age: 'Please enter an age between 4 and 6 years'
+            age: 'Please select a valid age (4-5 years)'
         },
         es: {
             required: 'Este campo es obligatorio',
             email: 'Por favor ingresa una dirección de correo válida',
             phone: 'Por favor ingresa un número de teléfono válido',
-            age: 'Por favor ingresa una edad entre 4 y 6 años'
+            age: 'Por favor selecciona una edad válida (4-5 años)'
         }
     };
     
@@ -325,7 +314,7 @@ function addFadeInAnimations() {
     }, observerOptions);
     
     // Observe sections for fade-in animation
-    const sections = document.querySelectorAll('section');
+    const sections = document.querySelectorAll('.left-panel > div, .right-panel');
     sections.forEach(section => {
         observer.observe(section);
     });
@@ -340,21 +329,27 @@ function showNotification(message, type = 'info') {
     // Create notification element
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
-    notification.textContent = message;
+    notification.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
+            <span>${message}</span>
+        </div>
+    `;
     
     // Style the notification
     notification.style.cssText = `
         position: fixed;
         top: 20px;
         right: 20px;
-        background: ${type === 'success' ? '#4ecdc4' : type === 'error' ? '#ff6b6b' : '#667eea'};
+        background: ${type === 'success' ? '#10b981' : type === 'error' ? '#dc2626' : '#3b82f6'};
         color: white;
-        padding: 15px 25px;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        padding: 15px 20px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         z-index: 1000;
-        font-weight: 600;
+        font-weight: 500;
         animation: slideInRight 0.3s ease-out;
+        max-width: 400px;
     `;
     
     // Add animation keyframes if not already added
@@ -399,47 +394,6 @@ function showNotification(message, type = 'info') {
     }, 5000);
 }
 
-// Utility Functions
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Add some interactive elements for children
-function addInteractiveElements() {
-    // Add click animations to child emojis
-    const children = document.querySelectorAll('.child');
-    children.forEach(child => {
-        child.addEventListener('click', function() {
-            this.style.transform = 'scale(1.2) rotate(10deg)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 200);
-        });
-    });
-    
-    // Add hover effects to toys
-    const toys = document.querySelectorAll('.toy');
-    toys.forEach(toy => {
-        toy.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.3)';
-        });
-        toy.addEventListener('mouseleave', function() {
-            this.style.transform = '';
-        });
-    });
-}
-
-// Initialize interactive elements when DOM is loaded
-document.addEventListener('DOMContentLoaded', addInteractiveElements);
-
 // Add keyboard navigation support
 document.addEventListener('keydown', function(e) {
     // Close language modal with Escape key
@@ -460,10 +414,10 @@ document.addEventListener('keydown', function(e) {
 // Add touch support for mobile devices
 function addTouchSupport() {
     // Add touch feedback for buttons
-    const buttons = document.querySelectorAll('button, .btn-primary, .btn-secondary');
+    const buttons = document.querySelectorAll('button, .submit-btn');
     buttons.forEach(button => {
         button.addEventListener('touchstart', function() {
-            this.style.transform = 'scale(0.95)';
+            this.style.transform = 'scale(0.98)';
         });
         
         button.addEventListener('touchend', function() {
