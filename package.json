@@ -1,0 +1,40 @@
+{
+  "name": "child-adhd-clinical-trials",
+  "version": "1.0.0",
+  "description": "A bilingual landing page for ADHD clinical trials targeting children aged 4-5 years",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8080 -o",
+    "dev": "npx live-server --port=8080 --open=/index.html",
+    "build": "echo 'No build process needed - static website'",
+    "deploy": "echo 'Deploy to your preferred hosting service'"
+  },
+  "keywords": [
+    "adhd",
+    "clinical-trials",
+    "children",
+    "medical-research",
+    "bilingual",
+    "landing-page",
+    "healthcare"
+  ],
+  "author": "Med Clinical Research Partners, LLC",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adetorok/childADHD.git"
+  },
+  "homepage": "https://github.com/adetorok/childADHD#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

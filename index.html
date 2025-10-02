@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADHD Clinical Trials for Children - Help Us Learn More</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Language Selection Modal -->
+    <div id="languageModal" class="modal">
+        <div class="modal-content">
+            <div class="language-selection">
+                <h2>Choose Your Language / Elige tu idioma</h2>
+                <div class="language-buttons">
+                    <button onclick="selectLanguage('en')" class="lang-btn english">
+                        <i class="fas fa-flag-usa"></i>
+                        English
+                    </button>
+                    <button onclick="selectLanguage('es')" class="lang-btn spanish">
+                        <i class="fas fa-flag"></i>
+                        Español
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-section">
+                <div class="logo">
+                    <div class="owl-logo">🦉🦉</div>
+                    <span class="company-name">Med Clinical Research Partners</span>
+                </div>
+                <div class="language-switcher">
+                    <button onclick="toggleLanguage()" class="lang-toggle">
+                        <i class="fas fa-globe"></i>
+                        <span id="currentLang">EN</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 data-en="Attention Parents of 4-5 Year Olds" data-es="Atención Padres de Niños de 4-5 Años">
+                        Attention Parents of 4-5 Year Olds
+                    </h1>
+                    <p class="hero-subtitle" data-en="Help us learn more about treating ADHD in children" data-es="Ayúdanos a aprender más sobre el tratamiento del TDAH en niños">
+                        Help us learn more about treating ADHD in children
+                    </p>
+                    <div class="cta-buttons">
+                        <button class="btn-primary" onclick="scrollToStudies()">
+                            <span data-en="Learn More" data-es="Aprende Más">Learn More</span>
+                        </button>
+                        <button class="btn-secondary" onclick="scrollToContact()">
+                            <span data-en="Contact Us" data-es="Contáctanos">Contact Us</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="children-illustration">
+                        <div class="child child-1">👦</div>
+                        <div class="child child-2">👧</div>
+                        <div class="toys">
+                            <div class="toy dinosaur">🦕</div>
+                            <div class="toy block">🧱</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Symptoms Section -->
+    <section class="symptoms">
+        <div class="container">
+            <div class="symptoms-content">
+                <h2 data-en="Does Your Child..." data-es="¿Tu Hijo...">
+                    Does Your Child...
+                </h2>
+                <div class="symptoms-list">
+                    <div class="symptom-item">
+                        <i class="fas fa-search"></i>
+                        <span data-en="Struggle to focus at home or preschool?" data-es="¿Tiene dificultades para concentrarse en casa o en el preescolar?">
+                            Struggle to focus at home or preschool?
+                        </span>
+                    </div>
+                    <div class="symptom-item">
+                        <i class="fas fa-running"></i>
+                        <span data-en="Seem overly active or has a teacher described them as hyperactive?" data-es="¿Parece demasiado activo o un maestro lo ha descrito como hiperactivo?">
+                            Seem overly active or has a teacher described them as hyperactive?
+                        </span>
+                    </div>
+                    <div class="symptom-item">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span data-en="Frequently switch between tasks?" data-es="¿Cambia frecuentemente entre tareas?">
+                            Frequently switch between tasks?
+                        </span>
+                    </div>
+                </div>
+                <div class="symptoms-cta">
+                    <p data-en="If you answered yes to any of these questions, we'd love to hear from you!" data-es="¡Si respondiste sí a cualquiera de estas preguntas, nos encantaría saber de ti!">
+                        If you answered yes to any of these questions, we'd love to hear from you!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Studies Section -->
+    <section id="studies" class="studies">
+        <div class="container">
+            <h2 data-en="Participate in Our ADHD Studies" data-es="Participa en Nuestros Estudios de TDAH">
+                Participate in Our ADHD Studies
+            </h2>
+            
+            <!-- Study 1: Med Clinical Research -->
+            <div class="study-card">
+                <div class="study-header">
+                    <h3 data-en="ADHD Study for 4-5 Year Olds" data-es="Estudio de TDAH para Niños de 4-5 Años">
+                        ADHD Study for 4-5 Year Olds
+                    </h3>
+                    <div class="study-badge">Med Clinical Research Partners</div>
+                </div>
+                <div class="study-content">
+                    <div class="study-details">
+                        <h4 data-en="Study Details" data-es="Detalles del Estudio">Study Details</h4>
+                        <ul>
+                            <li data-en="Compensation provided for your time" data-es="Se proporciona compensación por tu tiempo">
+                                Compensation provided for your time
+                            </li>
+                            <li data-en="Close medical care throughout the study" data-es="Atención médica cercana durante todo el estudio">
+                                Close medical care throughout the study
+                            </li>
+                            <li data-en="Study-related expenses may be reimbursed" data-es="Los gastos relacionados con el estudio pueden ser reembolsados">
+                                Study-related expenses may be reimbursed
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="study-requirements">
+                        <h4 data-en="Eligibility Requirements" data-es="Requisitos de Elegibilidad">Eligibility Requirements</h4>
+                        <ul>
+                            <li data-en="Children between 4-5 years old" data-es="Niños entre 4-5 años de edad">
+                                Children between 4-5 years old
+                            </li>
+                            <li data-en="Diagnosed with ADHD" data-es="Diagnosticado con TDAH">
+                                Diagnosed with ADHD
+                            </li>
+                            <li data-en="Attending structured group activities" data-es="Asistiendo a actividades grupales estructuradas">
+                                Attending structured group activities
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Study 2: Supernus Pharmaceuticals -->
+            <div class="study-card">
+                <div class="study-header">
+                    <h3 data-en="812P401 Study - SPN-812 Treatment" data-es="Estudio 812P401 - Tratamiento SPN-812">
+                        812P401 Study - SPN-812 Treatment
+                    </h3>
+                    <div class="study-badge">Supernus Pharmaceuticals</div>
+                </div>
+                <div class="study-content">
+                    <div class="study-details">
+                        <h4 data-en="About This Study" data-es="Acerca de Este Estudio">About This Study</h4>
+                        <p data-en="This study evaluates SPN-812, an FDA-approved medication for pediatric patients aged 6-17, in preschool-aged children with ADHD." data-es="Este estudio evalúa SPN-812, un medicamento aprobado por la FDA para pacientes pediátricos de 6-17 años, en niños en edad preescolar con TDAH.">
+                            This study evaluates SPN-812, an FDA-approved medication for pediatric patients aged 6-17, in preschool-aged children with ADHD.
+                        </p>
+                    </div>
+                    <div class="study-requirements">
+                        <h4 data-en="Eligibility Requirements" data-es="Requisitos de Elegibilidad">Eligibility Requirements</h4>
+                        <ul>
+                            <li data-en="Between 4 years and 5 years 9 months of age" data-es="Entre 4 años y 5 años 9 meses de edad">
+                                Between 4 years and 5 years 9 months of age
+                            </li>
+                            <li data-en="Diagnosed with ADHD" data-es="Diagnosticado con TDAH">
+                                Diagnosed with ADHD
+                            </li>
+                            <li data-en="Tried non-medication treatment OR symptoms severe enough for medication" data-es="Ha probado tratamiento sin medicación O síntomas lo suficientemente graves para medicación">
+                                Tried non-medication treatment OR symptoms severe enough for medication
+                            </li>
+                            <li data-en="Attending structured group activity (preschool, kindergarten, sports, etc.)" data-es="Asistiendo a actividad grupal estructurada (preescolar, jardín de infantes, deportes, etc.)">
+                                Attending structured group activity (preschool, kindergarten, sports, etc.)
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 data-en="Contact Us Today!" data-es="¡Contáctanos Hoy!">
+                Contact Us Today!
+            </h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4 data-en="Call or Text" data-es="Llama o Envía Mensaje">Call or Text</h4>
+                            <p>908-798-8373</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4 data-en="Email" data-es="Correo Electrónico">Email</h4>
+                            <p>info@medclinicalresearch.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4 data-en="Address" data-es="Dirección">Address</h4>
+                            <p>40 Union Ave, Ste #201<br>Irvington, NJ 07111</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <div>
+                            <h4 data-en="Website" data-es="Sitio Web">Website</h4>
+                            <p>www.medclinicalresearch.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3 data-en="Get More Information" data-es="Obtén Más Información">
+                        Get More Information
+                    </h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="parentName" name="parentName" required>
+                            <label for="parentName" data-en="Parent/Guardian Name" data-es="Nombre del Padre/Tutor">Parent/Guardian Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email" data-en="Email Address" data-es="Dirección de Correo">Email Address</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" required>
+                            <label for="phone" data-en="Phone Number" data-es="Número de Teléfono">Phone Number</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="childAge" name="childAge" required>
+                            <label for="childAge" data-en="Child's Age" data-es="Edad del Niño">Child's Age</label>
+                        </div>
+                        <div class="form-group">
+                            <select id="studyInterest" name="studyInterest" required>
+                                <option value="" data-en="Select Study Interest" data-es="Selecciona Interés en Estudio">Select Study Interest</option>
+                                <option value="med-clinical" data-en="Med Clinical Research Study" data-es="Estudio de Med Clinical Research">Med Clinical Research Study</option>
+                                <option value="supernus" data-en="812P401 Study (Supernus)" data-es="Estudio 812P401 (Supernus)">812P401 Study (Supernus)</option>
+                                <option value="both" data-en="Both Studies" data-es="Ambos Estudios">Both Studies</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="4"></textarea>
+                            <label for="message" data-en="Additional Information" data-es="Información Adicional">Additional Information</label>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <span data-en="Send Message" data-es="Enviar Mensaje">Send Message</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="owl-logo">🦉🦉</div>
+                    <span>Med Clinical Research Partners, LLC</span>
+                </div>
+                <div class="footer-info">
+                    <p data-en="Helping families and advancing ADHD research" data-es="Ayudando a las familias y avanzando en la investigación del TDAH">
+                        Helping families and advancing ADHD research
+                    </p>
+                    <p>&copy; 2024 Med Clinical Research Partners, LLC. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
