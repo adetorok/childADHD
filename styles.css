@@ -215,13 +215,14 @@ body {
 
 /* Key Information Box */
 .key-info-box {
-    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #fbbf24 100%);
     color: white;
     padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(245, 158, 11, 0.4);
     position: relative;
     overflow: hidden;
+    border: 3px solid #fbbf24;
 }
 
 .key-info-box::before {
@@ -239,13 +240,15 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 1rem;
     margin-bottom: 20px;
     backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    animation: bounce 2s infinite;
 }
 
 .key-info-box h1 {
@@ -267,11 +270,28 @@ body {
 
 /* Study Details */
 .study-details {
-    background: white;
+    background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
     padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border-left: 4px solid #3b82f6;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.2);
+    border: 3px solid #10b981;
+    position: relative;
+    overflow: hidden;
+}
+
+.study-details::before {
+    content: '🌟';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    opacity: 0.3;
+    animation: twinkle 2s infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.1); }
 }
 
 .study-details h2 {
@@ -289,23 +309,36 @@ body {
 
 .symptom-card {
     text-align: center;
-    padding: 20px;
-    background: #f8fafc;
-    border-radius: 12px;
-    border: 2px solid #e5e7eb;
+    padding: 25px;
+    background: white;
+    border-radius: 16px;
+    border: 3px solid #e5e7eb;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .symptom-card:hover {
-    transform: translateY(-2px);
-    border-color: #3b82f6;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+    transform: translateY(-5px) scale(1.02);
+    border-color: #10b981;
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.2);
 }
 
-.symptom-card i {
-    font-size: 2rem;
-    color: #3b82f6;
+.symptom-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #f59e0b, #10b981, #3b82f6);
+}
+
+.symptom-emoji {
+    font-size: 3rem;
     margin-bottom: 15px;
+    display: block;
+    animation: bounce 2s infinite;
 }
 
 .symptom-card h3 {
@@ -323,11 +356,23 @@ body {
 
 /* Benefits Section */
 .benefits-section {
-    background: white;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
     padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border-left: 4px solid #10b981;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.2);
+    border: 3px solid #f59e0b;
+    position: relative;
+    overflow: hidden;
+}
+
+.benefits-section::before {
+    content: '🎁';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    opacity: 0.3;
+    animation: twinkle 2s infinite;
 }
 
 .benefits-section h2 {
@@ -347,17 +392,36 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 15px;
-    padding: 15px;
-    background: #f0fdf4;
-    border-radius: 12px;
-    border: 1px solid #bbf7d0;
+    padding: 20px;
+    background: white;
+    border-radius: 16px;
+    border: 2px solid #fbbf24;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.benefit-item i {
-    font-size: 1.5rem;
-    color: #10b981;
+.benefit-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.2);
+    border-color: #f59e0b;
+}
+
+.benefit-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #f59e0b, #10b981, #3b82f6);
+}
+
+.benefit-emoji {
+    font-size: 2.5rem;
     margin-top: 2px;
-    min-width: 24px;
+    min-width: 40px;
+    animation: bounce 2s infinite;
 }
 
 .benefit-item h3 {
@@ -375,11 +439,23 @@ body {
 
 /* Eligibility Section */
 .eligibility-section {
-    background: white;
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
     padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border-left: 4px solid #f59e0b;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+    border: 3px solid #3b82f6;
+    position: relative;
+    overflow: hidden;
+}
+
+.eligibility-section::before {
+    content: '✨';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    opacity: 0.3;
+    animation: twinkle 2s infinite;
 }
 
 .eligibility-section h2 {
@@ -398,17 +474,36 @@ body {
 .requirement-item {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 12px;
-    background: #fffbeb;
-    border-radius: 8px;
-    border: 1px solid #fed7aa;
+    gap: 15px;
+    padding: 18px;
+    background: white;
+    border-radius: 12px;
+    border: 2px solid #93c5fd;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.requirement-item i {
-    font-size: 1.2rem;
-    color: #f59e0b;
-    min-width: 20px;
+.requirement-item:hover {
+    transform: translateX(5px);
+    border-color: #3b82f6;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+}
+
+.requirement-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #f59e0b, #10b981, #3b82f6);
+}
+
+.requirement-emoji {
+    font-size: 2rem;
+    min-width: 30px;
+    animation: bounce 2s infinite;
 }
 
 .requirement-item span {
