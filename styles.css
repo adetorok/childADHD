@@ -523,6 +523,7 @@ body {
 .right-panel {
     position: sticky;
     top: 120px;
+    padding: 0 20px;
 }
 
 .contact-form-container {
@@ -530,6 +531,8 @@ body {
     border-radius: 16px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    margin: 0 auto;
+    max-width: 100%;
 }
 
 .form-header {
@@ -616,6 +619,65 @@ body {
 
 .submit-btn:active {
     transform: translateY(0);
+}
+
+/* Referral Section */
+.referral-section {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    padding: 25px;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+.referral-section h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 10px;
+}
+
+.referral-section p {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.referral-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.share-btn, .copy-btn {
+    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.share-btn:hover, .copy-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.copy-btn {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.copy-btn:hover {
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
 }
 
 /* Contact Info */
@@ -721,6 +783,7 @@ body {
     .right-panel {
         position: static;
         order: -1;
+        padding: 0 10px;
     }
 }
 
@@ -740,6 +803,10 @@ body {
         max-width: 140px;
     }
     
+    .right-panel {
+        padding: 0 5px;
+    }
+    
     .key-info-box h1 {
         font-size: 2rem;
     }
@@ -755,6 +822,16 @@ body {
     .benefit-item {
         flex-direction: column;
         text-align: center;
+    }
+    
+    .referral-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .share-btn, .copy-btn {
+        width: 100%;
+        max-width: 200px;
     }
     
     .language-buttons {

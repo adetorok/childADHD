@@ -197,12 +197,26 @@
                             </div>
                             
                             <div class="form-group">
-                                <label for="studyInterest" data-en="Study Interest" data-es="Interés en el Estudio">Study Interest</label>
-                                <select id="studyInterest" name="studyInterest">
-                                    <option value="" data-en="Select Study" data-es="Selecciona Estudio">Select Study</option>
-                                    <option value="med-clinical" data-en="Med Clinical Research Study" data-es="Estudio de Med Clinical Research">Med Clinical Research Study</option>
-                                    <option value="supernus" data-en="812P401 Study (Supernus)" data-es="Estudio 812P401 (Supernus)">812P401 Study (Supernus)</option>
-                                    <option value="both" data-en="Both Studies" data-es="Ambos Estudios">Both Studies</option>
+                                <label for="contactTime" data-en="Best Time to Contact You *" data-es="Mejor Hora para Contactarte *">Best Time to Contact You *</label>
+                                <select id="contactTime" name="contactTime" required>
+                                    <option value="" data-en="Select Preferred Time" data-es="Selecciona Hora Preferida">Select Preferred Time</option>
+                                    <option value="morning" data-en="Morning (8 AM - 12 PM)" data-es="Mañana (8 AM - 12 PM)">Morning (8 AM - 12 PM)</option>
+                                    <option value="afternoon" data-en="Afternoon (12 PM - 5 PM)" data-es="Tarde (12 PM - 5 PM)">Afternoon (12 PM - 5 PM)</option>
+                                    <option value="evening" data-en="Evening (5 PM - 8 PM)" data-es="Noche (5 PM - 8 PM)">Evening (5 PM - 8 PM)</option>
+                                    <option value="anytime" data-en="Anytime" data-es="Cualquier Hora">Anytime</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="referralSource" data-en="How did you hear about us?" data-es="¿Cómo te enteraste de nosotros?">How did you hear about us?</label>
+                                <select id="referralSource" name="referralSource">
+                                    <option value="" data-en="Select Source" data-es="Selecciona Fuente">Select Source</option>
+                                    <option value="friend" data-en="Friend/Family Referral" data-es="Referencia de Amigo/Familia">Friend/Family Referral</option>
+                                    <option value="doctor" data-en="Doctor/Healthcare Provider" data-es="Doctor/Proveedor de Salud">Doctor/Healthcare Provider</option>
+                                    <option value="school" data-en="School/Teacher" data-es="Escuela/Maestro">School/Teacher</option>
+                                    <option value="online" data-en="Online Search" data-es="Búsqueda en Línea">Online Search</option>
+                                    <option value="social" data-en="Social Media" data-es="Redes Sociales">Social Media</option>
+                                    <option value="other" data-en="Other" data-es="Otro">Other</option>
                                 </select>
                             </div>
                             
@@ -216,6 +230,23 @@
                                 <span data-en="Send Information Request" data-es="Enviar Solicitud de Información">Send Information Request</span>
                             </button>
                         </form>
+                        
+                        <div class="referral-section">
+                            <h3 data-en="Know Another Parent? 🤝" data-es="¿Conoces a Otro Padre? 🤝">Know Another Parent? 🤝</h3>
+                            <p data-en="Help other families by referring them to our study! Share this page with parents who might be interested." data-es="¡Ayuda a otras familias refiriéndolas a nuestro estudio! Comparte esta página con padres que puedan estar interesados.">
+                                Help other families by referring them to our study! Share this page with parents who might be interested.
+                            </p>
+                            <div class="referral-buttons">
+                                <button type="button" onclick="sharePage()" class="share-btn">
+                                    <i class="fas fa-share-alt"></i>
+                                    <span data-en="Share This Page" data-es="Compartir Esta Página">Share This Page</span>
+                                </button>
+                                <button type="button" onclick="copyLink()" class="copy-btn">
+                                    <i class="fas fa-copy"></i>
+                                    <span data-en="Copy Link" data-es="Copiar Enlace">Copy Link</span>
+                                </button>
+                            </div>
+                        </div>
                         
                         <div class="contact-info">
                             <h3 data-en="Or Contact Us Directly" data-es="O Contáctanos Directamente">Or Contact Us Directly</h3>

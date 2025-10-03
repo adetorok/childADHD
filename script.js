@@ -428,3 +428,87 @@ function addTouchSupport() {
 
 // Initialize touch support
 document.addEventListener('DOMContentLoaded', addTouchSupport);
+
+// Share and Copy Functions
+function sharePage() {
+    if (navigator.share) {
+        navigator.share({
+            title: 'ADHD Clinical Study for Children 4-5 Years Old',
+            text: 'Help us learn about ADHD in kids! Check out this clinical study for children aged 4-5 years.',
+            url: window.location.href
+        }).then(() => {
+            showNotification(
+                currentLanguage === 'en' 
+                    ? 'Thank you for sharing!' 
+                    : '¡Gracias por compartir!',
+                'success'
+            );
+        }).catch((error) => {
+            console.log('Error sharing:', error);
+            copyLink();
+        });
+    } else {
+        copyLink();
+    }
+}
+
+function copyLink() {
+    const url = window.location.href;
+    
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).then(() => {
+            showNotification(
+                currentLanguage === 'en' 
+                    ? 'Link copied to clipboard!' 
+                    : '¡Enlace copiado al portapapeles!',
+                'success'
+            );
+        }).catch((error) => {
+            console.log('Error copying:', error);
+            fallbackCopyTextToClipboard(url);
+        });
+    } else {
+        fallbackCopyTextToClipboard(url);
+    }
+}
+
+function fallbackCopyTextToClipboard(text) {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    textArea.style.top = "0";
+    textArea.style.left = "0";
+    textArea.style.position = "fixed";
+    textArea.style.opacity = "0";
+    
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    
+    try {
+        const successful = document.execCommand('copy');
+        if (successful) {
+            showNotification(
+                currentLanguage === 'en' 
+                    ? 'Link copied to clipboard!' 
+                    : '¡Enlace copiado al portapapeles!',
+                'success'
+            );
+        } else {
+            showNotification(
+                currentLanguage === 'en' 
+                    ? 'Unable to copy link. Please copy manually.' 
+                    : 'No se pudo copiar el enlace. Por favor copia manualmente.',
+                'error'
+            );
+        }
+    } catch (err) {
+        showNotification(
+            currentLanguage === 'en' 
+                ? 'Unable to copy link. Please copy manually.' 
+                : 'No se pudo copiar el enlace. Por favor copia manualmente.',
+            'error'
+        );
+    }
+    
+    document.body.removeChild(textArea);
+}
