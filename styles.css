@@ -523,7 +523,7 @@ body {
 .right-panel {
     position: sticky;
     top: 120px;
-    padding: 0 20px;
+    padding: 0 40px 0 20px;
 }
 
 .contact-form-container {
@@ -533,6 +533,7 @@ body {
     overflow: hidden;
     margin: 0 auto;
     max-width: 100%;
+    border: 2px solid #e5e7eb;
 }
 
 .form-header {
@@ -596,7 +597,7 @@ body {
 
 .submit-btn {
     width: 100%;
-    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+    background: #3b82f6;
     color: white;
     border: none;
     padding: 15px;
@@ -609,12 +610,13 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
 }
 
 .submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+    background: #2563eb;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
 .submit-btn:active {
@@ -623,7 +625,7 @@ body {
 
 /* Referral Section */
 .referral-section {
-    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    background: #f8fafc;
     padding: 25px;
     border-top: 1px solid #e5e7eb;
     text-align: center;
@@ -651,7 +653,7 @@ body {
 }
 
 .share-btn, .copy-btn {
-    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+    background: #3b82f6;
     color: white;
     border: none;
     padding: 10px 16px;
@@ -663,21 +665,23 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
 }
 
 .share-btn:hover, .copy-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+    background: #2563eb;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
 }
 
 .copy-btn {
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+    background: #6b7280;
+    box-shadow: 0 2px 4px rgba(107, 114, 128, 0.2);
 }
 
 .copy-btn:hover {
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+    background: #4b5563;
+    box-shadow: 0 4px 8px rgba(107, 114, 128, 0.3);
 }
 
 /* Contact Info */
@@ -783,7 +787,7 @@ body {
     .right-panel {
         position: static;
         order: -1;
-        padding: 0 10px;
+        padding: 0 20px;
     }
 }
 
@@ -804,7 +808,7 @@ body {
     }
     
     .right-panel {
-        padding: 0 5px;
+        padding: 0 15px;
     }
     
     .key-info-box h1 {
