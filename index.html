@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADHD Clinical Trials for Children 4-5 Years Old</title>
+    <title>Help Us Learn About ADHD in Kids - Clinical Research Study</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fredoka+One:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -33,12 +33,10 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo-section">
-                    <div class="logo">
-                        <img src="medclinic1logo-02-e1592504379857-165x55.png" alt="Med Clinical Research Partners Logo" class="logo-image">
-                        <div class="logo-text">
-                            <span class="company-name">Med Clinical Research Partners</span>
-                            <span class="tagline" data-en="Advancing ADHD Research" data-es="Avanzando la Investigación del TDAH">Advancing ADHD Research</span>
-                        </div>
+                    <img src="medclinic1logo-02-e1592504379857-165x55.png" alt="Med Clinical Research Partners Logo" class="logo-image">
+                    <div class="logo-text">
+                        <span class="company-name">Med Clinical Research Partners</span>
+                        <span class="tagline" data-en="Advancing ADHD Research" data-es="Avanzando la Investigación del TDAH">Advancing ADHD Research</span>
                     </div>
                 </div>
                 <div class="language-switcher">
@@ -51,234 +49,352 @@
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="main-content">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="hero-pattern"></div>
+        </div>
         <div class="container">
-            <div class="content-grid">
-                <!-- Left Side - Study Information -->
-                <div class="left-panel">
-                    <!-- Key Information Box -->
-                    <div class="key-info-box">
-                        <div class="age-badge">
-                            <i class="fas fa-child"></i>
-                            <span data-en="Ages 4-5 Years" data-es="Edades 4-5 Años">Ages 4-5 Years</span>
-                        </div>
-                        <h1 data-en="Help Us Learn About ADHD in Kids! 🌟" data-es="¡Ayúdanos a Aprender Sobre el TDAH en Niños! 🌟">
-                            Help Us Learn About ADHD in Kids! 🌟
-                        </h1>
-                        <p class="study-description" data-en="We're looking for amazing kids and their families to help us understand ADHD better! Your little superhero can help other kids by participating in our special study. 🦸‍♀️🦸‍♂️" data-es="¡Estamos buscando niños increíbles y sus familias para ayudarnos a entender mejor el TDAH! Tu pequeño superhéroe puede ayudar a otros niños participando en nuestro estudio especial. 🦸‍♀️🦸‍♂️">
-                            We're looking for amazing kids and their families to help us understand ADHD better! Your little superhero can help other kids by participating in our special study. 🦸‍♀️🦸‍♂️
-                        </p>
+            <div class="hero-content">
+                <div class="hero-left">
+                    <div class="age-badge">
+                        <i class="fas fa-child"></i>
+                        <span data-en="Ages 4-5 Years" data-es="Edades 4-5 Años">Ages 4-5 Years</span>
                     </div>
-
-                    <!-- Study Details -->
-                    <div class="study-details">
-                        <h2 data-en="Does Your Little One Show These Signs? 🤔" data-es="¿Tu Pequeño Muestra Estas Señales? 🤔">
-                            Does Your Little One Show These Signs? 🤔
-                        </h2>
-                        <div class="symptoms-grid">
-                            <div class="symptom-card">
-                                <div class="symptom-emoji">🔍</div>
-                                <h3 data-en="Trouble Paying Attention" data-es="Dificultad para Prestar Atención">Trouble Paying Attention</h3>
-                                <p data-en="Hard to focus on activities at home or school" data-es="Le cuesta concentrarse en actividades en casa o en la escuela">
-                                    Hard to focus on activities at home or school
-                                </p>
-                            </div>
-                            <div class="symptom-card">
-                                <div class="symptom-emoji">🏃‍♂️</div>
-                                <h3 data-en="Very Active" data-es="Muy Activo">Very Active</h3>
-                                <p data-en="Always on the go, can't sit still" data-es="Siempre en movimiento, no puede quedarse quieto">
-                                    Always on the go, can't sit still
-                                </p>
-                            </div>
-                            <div class="symptom-card">
-                                <div class="symptom-emoji">⚡</div>
-                                <h3 data-en="Acts Quickly" data-es="Actúa Rápidamente">Acts Quickly</h3>
-                                <p data-en="Does things without thinking first" data-es="Hace cosas sin pensar primero">
-                                    Does things without thinking first
-                                </p>
-                            </div>
-                        </div>
+                    <h1 data-en="Help Us Learn About ADHD in Kids" data-es="Ayúdanos a Aprender Sobre el TDAH en Niños">
+                        Help Us Learn About ADHD in Kids
+                    </h1>
+                    <p class="hero-subtitle" data-en="Join our clinical research study and help advance ADHD treatment for young children. Your participation makes a difference." data-es="Únete a nuestro estudio de investigación clínica y ayuda a avanzar el tratamiento del TDAH para niños pequeños. Tu participación marca la diferencia.">
+                        Join our clinical research study and help advance ADHD treatment for young children. Your participation makes a difference.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn-primary" onclick="scrollToForm()">
+                            <i class="fas fa-check-circle"></i>
+                            <span data-en="See If You Qualify" data-es="Ver Si Calificas">See If You Qualify</span>
+                        </button>
+                        <button class="btn-secondary" onclick="scrollToBenefits()">
+                            <i class="fas fa-info-circle"></i>
+                            <span data-en="Learn More" data-es="Aprende Más">Learn More</span>
+                        </button>
                     </div>
-
-                    <!-- Study Benefits -->
-                    <div class="benefits-section">
-                        <h2 data-en="What Your Family Gets! 🎁" data-es="¡Lo Que Obtiene Tu Familia! 🎁">What Your Family Gets! 🎁</h2>
-                        <div class="benefits-list">
-                            <div class="benefit-item">
-                                <div class="benefit-emoji">💰</div>
-                                <div>
-                                    <h3 data-en="Money for Your Time!" data-es="¡Dinero por Tu Tiempo!">Money for Your Time!</h3>
-                                    <p data-en="Receive payment for your time and travel" data-es="Recibe pago por tu tiempo y viaje">
-                                        Receive payment for your time and travel
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="benefit-item">
-                                <div class="benefit-emoji">👩‍⚕️</div>
-                                <div>
-                                    <h3 data-en="Special Doctor Care" data-es="Atención Médica Especial">Special Doctor Care</h3>
-                                    <p data-en="Friendly doctors will watch over your child" data-es="Doctores amigables cuidarán a tu hijo">
-                                        Friendly doctors will watch over your child
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="benefit-item">
-                                <div class="benefit-emoji">🎫</div>
-                                <div>
-                                    <h3 data-en="We Pay for Everything!" data-es="¡Nosotros Pagamos Todo!">We Pay for Everything!</h3>
-                                    <p data-en="All study costs are covered by us" data-es="Todos los costos del estudio los cubrimos nosotros">
-                                        All study costs are covered by us
-                                    </p>
-                                </div>
-                            </div>
+                    <div class="trust-indicators">
+                        <div class="trust-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span data-en="HIPAA Compliant" data-es="Cumple con HIPAA">HIPAA Compliant</span>
                         </div>
-                    </div>
-
-                    <!-- Eligibility Requirements -->
-                    <div class="eligibility-section">
-                        <h2 data-en="Who Can Join Our Study? ✨" data-es="¿Quién Puede Unirse a Nuestro Estudio? ✨">Who Can Join Our Study? ✨</h2>
-                        <div class="requirements-list">
-                            <div class="requirement-item">
-                                <div class="requirement-emoji">🎂</div>
-                                <span data-en="Your child is 4 or 5 years old" data-es="Tu hijo tiene 4 o 5 años de edad">
-                                    Your child is 4 or 5 years old
-                                </span>
-                            </div>
-                            <div class="requirement-item">
-                                <div class="requirement-emoji">🏥</div>
-                                <span data-en="A doctor has said your child has ADHD" data-es="Un doctor ha dicho que tu hijo tiene TDAH">
-                                    A doctor has said your child has ADHD
-                                </span>
-                            </div>
-                            <div class="requirement-item">
-                                <div class="requirement-emoji">🏫</div>
-                                <span data-en="Your child goes to school or activities" data-es="Tu hijo va a la escuela o actividades">
-                                    Your child goes to school or activities
-                                </span>
-                            </div>
+                        <div class="trust-item">
+                            <i class="fas fa-lock"></i>
+                            <span data-en="Privacy Protected" data-es="Privacidad Protegida">Privacy Protected</span>
                         </div>
                     </div>
                 </div>
-
-                <!-- Right Side - Contact Form -->
-                <div class="right-panel">
-                    <div class="contact-form-container">
+                <div class="hero-right">
+                    <div class="form-container">
                         <div class="form-header">
-                            <h2 data-en="Get More Information" data-es="Obtén Más Información">Get More Information</h2>
-                            <p data-en="Fill out the form below and we'll contact you within 24 hours" data-es="Completa el formulario a continuación y te contactaremos dentro de 24 horas">
-                                Fill out the form below and we'll contact you within 24 hours
-                            </p>
+                            <h3 data-en="Get Started Today" data-es="Comienza Hoy">Get Started Today</h3>
+                            <p data-en="Complete our quick qualification form" data-es="Completa nuestro formulario de calificación rápida">Complete our quick qualification form</p>
                         </div>
-                        
-                        <form id="contactForm" class="contact-form">
-                            <div class="form-group">
-                                <label for="parentName" data-en="Parent/Guardian Name *" data-es="Nombre del Padre/Tutor *">Parent/Guardian Name *</label>
-                                <input type="text" id="parentName" name="parentName" required>
+                        <form id="contactForm" class="stepper-form">
+                            <!-- Step 1: Parent Info -->
+                            <div class="form-step active" data-step="1">
+                                <div class="step-header">
+                                    <div class="step-number">1</div>
+                                    <h4 data-en="Parent Information" data-es="Información del Padre">Parent Information</h4>
+                                </div>
+                                <div class="form-group">
+                                    <label for="parentName" data-en="Parent/Guardian Name *" data-es="Nombre del Padre/Tutor *">Parent/Guardian Name *</label>
+                                    <input type="text" id="parentName" name="parentName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" data-en="Email Address *" data-es="Dirección de Correo *">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone" data-en="Phone Number *" data-es="Número de Teléfono *">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                                <button type="button" class="step-btn" onclick="nextStep()">
+                                    <span data-en="Next: Child Info" data-es="Siguiente: Info del Niño">Next: Child Info</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
                             </div>
-                            
-                            <div class="form-group">
-                                <label for="email" data-en="Email Address *" data-es="Dirección de Correo *">Email Address *</label>
-                                <input type="email" id="email" name="email" required>
+
+                            <!-- Step 2: Child Info -->
+                            <div class="form-step" data-step="2">
+                                <div class="step-header">
+                                    <div class="step-number">2</div>
+                                    <h4 data-en="Child Information" data-es="Información del Niño">Child Information</h4>
+                                </div>
+                                <div class="form-group">
+                                    <label for="childAge" data-en="Child's Age *" data-es="Edad del Niño *">Child's Age *</label>
+                                    <select id="childAge" name="childAge" required>
+                                        <option value="" data-en="Select Age" data-es="Selecciona Edad">Select Age</option>
+                                        <option value="4" data-en="4 years old" data-es="4 años de edad">4 years old</option>
+                                        <option value="5" data-en="5 years old" data-es="5 años de edad">5 years old</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactTime" data-en="Best Time to Contact You *" data-es="Mejor Hora para Contactarte *">Best Time to Contact You *</label>
+                                    <select id="contactTime" name="contactTime" required>
+                                        <option value="" data-en="Select Preferred Time" data-es="Selecciona Hora Preferida">Select Preferred Time</option>
+                                        <option value="morning" data-en="Morning (8 AM - 12 PM)" data-es="Mañana (8 AM - 12 PM)">Morning (8 AM - 12 PM)</option>
+                                        <option value="afternoon" data-en="Afternoon (12 PM - 5 PM)" data-es="Tarde (12 PM - 5 PM)">Afternoon (12 PM - 5 PM)</option>
+                                        <option value="evening" data-en="Evening (5 PM - 8 PM)" data-es="Noche (5 PM - 8 PM)">Evening (5 PM - 8 PM)</option>
+                                        <option value="anytime" data-en="Anytime" data-es="Cualquier Hora">Anytime</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="referralSource" data-en="How did you hear about us?" data-es="¿Cómo te enteraste de nosotros?">How did you hear about us?</label>
+                                    <select id="referralSource" name="referralSource">
+                                        <option value="" data-en="Select Source" data-es="Selecciona Fuente">Select Source</option>
+                                        <option value="friend" data-en="Friend/Family Referral" data-es="Referencia de Amigo/Familia">Friend/Family Referral</option>
+                                        <option value="doctor" data-en="Doctor/Healthcare Provider" data-es="Doctor/Proveedor de Salud">Doctor/Healthcare Provider</option>
+                                        <option value="school" data-en="School/Teacher" data-es="Escuela/Maestro">School/Teacher</option>
+                                        <option value="online" data-en="Online Search" data-es="Búsqueda en Línea">Online Search</option>
+                                        <option value="social" data-en="Social Media" data-es="Redes Sociales">Social Media</option>
+                                        <option value="other" data-en="Other" data-es="Otro">Other</option>
+                                    </select>
+                                </div>
+                                <div class="step-buttons">
+                                    <button type="button" class="step-btn secondary" onclick="prevStep()">
+                                        <i class="fas fa-arrow-left"></i>
+                                        <span data-en="Back" data-es="Atrás">Back</span>
+                                    </button>
+                                    <button type="button" class="step-btn" onclick="nextStep()">
+                                        <span data-en="Next: Additional Info" data-es="Siguiente: Info Adicional">Next: Additional Info</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
                             </div>
-                            
-                            <div class="form-group">
-                                <label for="phone" data-en="Phone Number *" data-es="Número de Teléfono *">Phone Number *</label>
-                                <input type="tel" id="phone" name="phone" required>
+
+                            <!-- Step 3: Additional Info -->
+                            <div class="form-step" data-step="3">
+                                <div class="step-header">
+                                    <div class="step-number">3</div>
+                                    <h4 data-en="Additional Information" data-es="Información Adicional">Additional Information</h4>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message" data-en="Tell us about your child's symptoms or any questions" data-es="Cuéntanos sobre los síntomas de tu hijo o cualquier pregunta">Tell us about your child's symptoms or any questions</label>
+                                    <textarea id="message" name="message" rows="4" placeholder="Share any concerns or questions you have about your child's behavior..."></textarea>
+                                </div>
+                                <div class="step-buttons">
+                                    <button type="button" class="step-btn secondary" onclick="prevStep()">
+                                        <i class="fas fa-arrow-left"></i>
+                                        <span data-en="Back" data-es="Atrás">Back</span>
+                                    </button>
+                                    <button type="submit" class="submit-btn">
+                                        <i class="fas fa-paper-plane"></i>
+                                        <span data-en="Submit Application" data-es="Enviar Solicitud">Submit Application</span>
+                                    </button>
+                                </div>
                             </div>
-                            
-                            <div class="form-group">
-                                <label for="childAge" data-en="Child's Age *" data-es="Edad del Niño *">Child's Age *</label>
-                                <select id="childAge" name="childAge" required>
-                                    <option value="" data-en="Select Age" data-es="Selecciona Edad">Select Age</option>
-                                    <option value="4" data-en="4 years old" data-es="4 años de edad">4 years old</option>
-                                    <option value="5" data-en="5 years old" data-es="5 años de edad">5 years old</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="contactTime" data-en="Best Time to Contact You *" data-es="Mejor Hora para Contactarte *">Best Time to Contact You *</label>
-                                <select id="contactTime" name="contactTime" required>
-                                    <option value="" data-en="Select Preferred Time" data-es="Selecciona Hora Preferida">Select Preferred Time</option>
-                                    <option value="morning" data-en="Morning (8 AM - 12 PM)" data-es="Mañana (8 AM - 12 PM)">Morning (8 AM - 12 PM)</option>
-                                    <option value="afternoon" data-en="Afternoon (12 PM - 5 PM)" data-es="Tarde (12 PM - 5 PM)">Afternoon (12 PM - 5 PM)</option>
-                                    <option value="evening" data-en="Evening (5 PM - 8 PM)" data-es="Noche (5 PM - 8 PM)">Evening (5 PM - 8 PM)</option>
-                                    <option value="anytime" data-en="Anytime" data-es="Cualquier Hora">Anytime</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="referralSource" data-en="How did you hear about us?" data-es="¿Cómo te enteraste de nosotros?">How did you hear about us?</label>
-                                <select id="referralSource" name="referralSource">
-                                    <option value="" data-en="Select Source" data-es="Selecciona Fuente">Select Source</option>
-                                    <option value="friend" data-en="Friend/Family Referral" data-es="Referencia de Amigo/Familia">Friend/Family Referral</option>
-                                    <option value="doctor" data-en="Doctor/Healthcare Provider" data-es="Doctor/Proveedor de Salud">Doctor/Healthcare Provider</option>
-                                    <option value="school" data-en="School/Teacher" data-es="Escuela/Maestro">School/Teacher</option>
-                                    <option value="online" data-en="Online Search" data-es="Búsqueda en Línea">Online Search</option>
-                                    <option value="social" data-en="Social Media" data-es="Redes Sociales">Social Media</option>
-                                    <option value="other" data-en="Other" data-es="Otro">Other</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message" data-en="Additional Information" data-es="Información Adicional">Additional Information</label>
-                                <textarea id="message" name="message" rows="4" placeholder="Tell us about your child's symptoms or any questions you have..."></textarea>
-                            </div>
-                            
-                            <button type="submit" class="submit-btn">
-                                <i class="fas fa-paper-plane"></i>
-                                <span data-en="Send Information Request" data-es="Enviar Solicitud de Información">Send Information Request</span>
-                            </button>
                         </form>
-                        
-                        <div class="referral-section">
-                            <h3 data-en="Know Another Parent? 🤝" data-es="¿Conoces a Otro Padre? 🤝">Know Another Parent? 🤝</h3>
-                            <p data-en="Help other families by referring them to our study! Share this page with parents who might be interested." data-es="¡Ayuda a otras familias refiriéndolas a nuestro estudio! Comparte esta página con padres que puedan estar interesados.">
-                                Help other families by referring them to our study! Share this page with parents who might be interested.
-                            </p>
-                            <div class="referral-buttons">
-                                <button type="button" onclick="sharePage()" class="share-btn">
-                                    <i class="fas fa-share-alt"></i>
-                                    <span data-en="Share This Page" data-es="Compartir Esta Página">Share This Page</span>
-                                </button>
-                                <button type="button" onclick="copyLink()" class="copy-btn">
-                                    <i class="fas fa-copy"></i>
-                                    <span data-en="Copy Link" data-es="Copiar Enlace">Copy Link</span>
-                                </button>
+                        <div class="trust-badges">
+                            <div class="trust-badge">
+                                <i class="fas fa-shield-alt"></i>
+                                <span data-en="HIPAA Compliant" data-es="Cumple con HIPAA">HIPAA Compliant</span>
                             </div>
-                        </div>
-                        
-                        <div class="contact-info">
-                            <h3 data-en="Or Contact Us Directly" data-es="O Contáctanos Directamente">Or Contact Us Directly</h3>
-                            <div class="contact-methods">
-                                <div class="contact-method">
-                                    <i class="fas fa-phone"></i>
-                                    <div>
-                                        <span class="label" data-en="Call or Text" data-es="Llama o Envía Mensaje">Call or Text</span>
-                                        <span class="value">908-798-8373</span>
-                                    </div>
-                                </div>
-                                <div class="contact-method">
-                                    <i class="fas fa-envelope"></i>
-                                    <div>
-                                        <span class="label" data-en="Email" data-es="Correo">Email</span>
-                                        <span class="value">info@medclinicalresearch.com</span>
-                                    </div>
-                                </div>
-                                <div class="contact-method">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <div>
-                                        <span class="label" data-en="Address" data-es="Dirección">Address</span>
-                                        <span class="value">40 Union Ave, Ste #201<br>Irvington, NJ 07111</span>
-                                    </div>
-                                </div>
+                            <div class="trust-badge">
+                                <i class="fas fa-lock"></i>
+                                <span data-en="Privacy Protected" data-es="Privacidad Protegida">Privacy Protected</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
+
+    <!-- ADHD Signs Section -->
+    <section class="signs-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="Does Your Child Show These Signs?" data-es="¿Tu Hijo Muestra Estas Señales?">Does Your Child Show These Signs?</h2>
+                <p data-en="These are common signs of ADHD in young children" data-es="Estas son señales comunes del TDAH en niños pequeños">These are common signs of ADHD in young children</p>
+            </div>
+            <div class="signs-grid">
+                <div class="sign-card">
+                    <div class="sign-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 data-en="Trouble Focusing" data-es="Dificultad para Concentrarse">Trouble Focusing</h3>
+                    <p data-en="Hard to pay attention to activities or instructions" data-es="Le cuesta prestar atención a actividades o instrucciones">Hard to pay attention to activities or instructions</p>
+                </div>
+                <div class="sign-card">
+                    <div class="sign-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3 data-en="Very Active" data-es="Muy Activo">Very Active</h3>
+                    <p data-en="Always moving, can't sit still for long periods" data-es="Siempre en movimiento, no puede quedarse quieto por mucho tiempo">Always moving, can't sit still for long periods</p>
+                </div>
+                <div class="sign-card">
+                    <div class="sign-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 data-en="Acts Quickly" data-es="Actúa Rápidamente">Acts Quickly</h3>
+                    <p data-en="Does things without thinking or interrupts others" data-es="Hace cosas sin pensar o interrumpe a otros">Does things without thinking or interrupts others</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section" id="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="What Your Family Gets" data-es="Lo Que Obtiene Tu Familia">What Your Family Gets</h2>
+                <p data-en="Participating in our study comes with valuable benefits" data-es="Participar en nuestro estudio viene con beneficios valiosos">Participating in our study comes with valuable benefits</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3 data-en="Money for Your Time" data-es="Dinero por Tu Tiempo">Money for Your Time</h3>
+                    <p data-en="Receive payment for your time and travel" data-es="Recibe pago por tu tiempo y viaje">Receive payment for your time and travel</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3 data-en="Special Doctor Care" data-es="Atención Médica Especial">Special Doctor Care</h3>
+                    <p data-en="Expert medical monitoring throughout the study" data-es="Monitoreo médico experto durante todo el estudio">Expert medical monitoring throughout the study</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-receipt"></i>
+                    </div>
+                    <h3 data-en="We Pay for Everything" data-es="Nosotros Pagamos Todo">We Pay for Everything</h3>
+                    <p data-en="All study-related expenses are covered" data-es="Todos los gastos relacionados con el estudio están cubiertos">All study-related expenses are covered</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eligibility Section -->
+    <section class="eligibility-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="Who Can Join Our Study?" data-es="¿Quién Puede Unirse a Nuestro Estudio?">Who Can Join Our Study?</h2>
+                <p data-en="Check if your child meets our study requirements" data-es="Verifica si tu hijo cumple con nuestros requisitos del estudio">Check if your child meets our study requirements</p>
+            </div>
+            <div class="eligibility-checklist">
+                <div class="checklist-item">
+                    <div class="check-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span data-en="Child is 4 or 5 years old" data-es="El niño tiene 4 o 5 años de edad">Child is 4 or 5 years old</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="check-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span data-en="Diagnosed with ADHD by a healthcare provider" data-es="Diagnosticado con TDAH por un proveedor de atención médica">Diagnosed with ADHD by a healthcare provider</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="check-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span data-en="Attends preschool, kindergarten, or structured activities" data-es="Asiste a preescolar, jardín de infantes o actividades estructuradas">Attends preschool, kindergarten, or structured activities</span>
+                </div>
+            </div>
+            <div class="cta-section">
+                <button class="btn-primary large" onclick="scrollToForm()">
+                    <i class="fas fa-check-circle"></i>
+                    <span data-en="See If You Qualify" data-es="Ver Si Calificas">See If You Qualify</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="Get in Touch" data-es="Ponte en Contacto">Get in Touch</h2>
+                <p data-en="Have questions? We're here to help" data-es="¿Tienes preguntas? Estamos aquí para ayudar">Have questions? We're here to help</p>
+            </div>
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 data-en="Call or Text" data-es="Llama o Envía Mensaje">Call or Text</h3>
+                    <p>908-798-8373</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 data-en="Email Us" data-es="Envíanos un Correo">Email Us</h3>
+                    <p>info@medclinicalresearch.com</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 data-en="Visit Us" data-es="Visítanos">Visit Us</h3>
+                    <p>40 Union Ave, Ste #201<br>Irvington, NJ 07111</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="Frequently Asked Questions" data-es="Preguntas Frecuentes">Frequently Asked Questions</h2>
+                <p data-en="Get answers to common questions about our study" data-es="Obtén respuestas a preguntas comunes sobre nuestro estudio">Get answers to common questions about our study</p>
+            </div>
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span data-en="Is this study safe for my child?" data-es="¿Es seguro este estudio para mi hijo?">Is this study safe for my child?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-en="Yes, our study follows strict safety protocols and is closely monitored by qualified healthcare professionals. Your child's safety is our top priority." data-es="Sí, nuestro estudio sigue protocolos de seguridad estrictos y es monitoreado de cerca por profesionales de la salud calificados. La seguridad de tu hijo es nuestra máxima prioridad.">
+                            Yes, our study follows strict safety protocols and is closely monitored by qualified healthcare professionals. Your child's safety is our top priority.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span data-en="Do we get paid for participating?" data-es="¿Nos pagan por participar?">Do we get paid for participating?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-en="Yes, families receive compensation for their time and travel expenses. The amount varies based on the study visits completed." data-es="Sí, las familias reciben compensación por su tiempo y gastos de viaje. La cantidad varía según las visitas del estudio completadas.">
+                            Yes, families receive compensation for their time and travel expenses. The amount varies based on the study visits completed.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span data-en="What happens during study visits?" data-es="¿Qué sucede durante las visitas del estudio?">What happens during study visits?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-en="Study visits include health assessments, questionnaires, and monitoring. Visits are designed to be comfortable and child-friendly." data-es="Las visitas del estudio incluyen evaluaciones de salud, cuestionarios y monitoreo. Las visitas están diseñadas para ser cómodas y amigables para los niños.">
+                            Study visits include health assessments, questionnaires, and monitoring. Visits are designed to be comfortable and child-friendly.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span data-en="Can we withdraw from the study?" data-es="¿Podemos retirarnos del estudio?">Can we withdraw from the study?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-en="Yes, participation is completely voluntary. You can withdraw at any time without any penalty or loss of benefits." data-es="Sí, la participación es completamente voluntaria. Puedes retirarte en cualquier momento sin penalización o pérdida de beneficios.">
+                            Yes, participation is completely voluntary. You can withdraw at any time without any penalty or loss of benefits.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -297,6 +413,14 @@
             </div>
         </div>
     </footer>
+
+    <!-- Sticky CTA (Mobile) -->
+    <div class="sticky-cta">
+        <button class="btn-primary" onclick="scrollToForm()">
+            <i class="fas fa-check-circle"></i>
+            <span data-en="See If You Qualify" data-es="Ver Si Calificas">See If You Qualify</span>
+        </button>
+    </div>
 
     <script src="script.js"></script>
 </body>

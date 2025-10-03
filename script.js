@@ -1,5 +1,6 @@
 // Language Management
 let currentLanguage = 'en';
+let currentStep = 1;
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
@@ -22,6 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add fade-in animations
     addFadeInAnimations();
+    
+    // Initialize FAQ functionality
+    initializeFAQ();
 });
 
 // Language Selection Functions
@@ -107,6 +111,66 @@ function updateFormLanguage(lang) {
     });
 }
 
+// Stepper Form Functions
+function nextStep() {
+    if (validateCurrentStep()) {
+        if (currentStep < 3) {
+            currentStep++;
+            showStep(currentStep);
+        }
+    }
+}
+
+function prevStep() {
+    if (currentStep > 1) {
+        currentStep--;
+        showStep(currentStep);
+    }
+}
+
+function showStep(step) {
+    // Hide all steps
+    const steps = document.querySelectorAll('.form-step');
+    steps.forEach(stepEl => {
+        stepEl.classList.remove('active');
+    });
+    
+    // Show current step
+    const currentStepEl = document.querySelector(`[data-step="${step}"]`);
+    if (currentStepEl) {
+        currentStepEl.classList.add('active');
+    }
+    
+    // Update step indicators
+    updateStepIndicators();
+}
+
+function updateStepIndicators() {
+    const stepNumbers = document.querySelectorAll('.step-number');
+    stepNumbers.forEach((number, index) => {
+        const stepNum = index + 1;
+        if (stepNum <= currentStep) {
+            number.style.background = '#0ea5e9';
+        } else {
+            number.style.background = '#e2e8f0';
+        }
+    });
+}
+
+function validateCurrentStep() {
+    const currentStepEl = document.querySelector(`[data-step="${currentStep}"]`);
+    const requiredFields = currentStepEl.querySelectorAll('[required]');
+    let isValid = true;
+    
+    requiredFields.forEach(field => {
+        if (!validateField({ target: field })) {
+            isValid = false;
+        }
+    });
+    
+    return isValid;
+}
+
 // Form Handling
 function initializeForm() {
     const form = document.getElementById('contactForm');
@@ -121,13 +185,16 @@ function initializeForm() {
         input.addEventListener('blur', validateField);
         input.addEventListener('input', clearFieldError);
     });
+    
+    // Initialize first step
+    showStep(1);
 }
 
 function handleFormSubmit(e) {
     e.preventDefault();
     
-    // Validate form
-    if (!validateForm()) {
+    // Validate all steps
+    if (!validateAllSteps()) {
         return;
     }
     
@@ -139,7 +206,7 @@ function handleFormSubmit(e) {
     const submitBtn = e.target.querySelector('.submit-btn');
     const originalText = submitBtn.innerHTML;
     submitBtn.innerHTML = currentLanguage === 'en' 
-        ? '<i class="fas fa-spinner fa-spin"></i> Sending...' 
+        ? '<i class="fas fa-spinner fa-spin"></i> Submitting...' 
         : '<i class="fas fa-spinner fa-spin"></i> Enviando...';
     submitBtn.disabled = true;
     
@@ -147,6 +214,8 @@ function handleFormSubmit(e) {
     setTimeout(() => {
         // Reset form
         e.target.reset();
+        currentStep = 1;
+        showStep(1);
         
         // Show success message
         showNotification(
@@ -166,16 +235,19 @@ function handleFormSubmit(e) {
     }, 2000);
 }
 
-function validateForm() {
-    const form = document.getElementById('contactForm');
-    const requiredFields = form.querySelectorAll('[required]');
+function validateAllSteps() {
     let isValid = true;
     
-    requiredFields.forEach(field => {
-        if (!validateField({ target: field })) {
-            isValid = false;
-        }
-    });
+    for (let step = 1; step <= 3; step++) {
+        const stepEl = document.querySelector(`[data-step="${step}"]`);
+        const requiredFields = stepEl.querySelectorAll('[required]');
+        
+        requiredFields.forEach(field => {
+            if (!validateField({ target: field })) {
+                isValid = false;
+            }
+        });
+    }
     
     return isValid;
 }
@@ -298,6 +370,51 @@ function getErrorMessage(type, fieldName) {
     return messages[currentLanguage][type] || messages.en[type];
 }
 
+// FAQ Functions
+function initializeFAQ() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => toggleFAQ(question));
+    });
+}
+
+function toggleFAQ(question) {
+    const faqItem = question.closest('.faq-item');
+    const isActive = faqItem.classList.contains('active');
+    
+    // Close all FAQ items
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    // Toggle current item
+    if (!isActive) {
+        faqItem.classList.add('active');
+    }
+}
+
+// Scroll Functions
+function scrollToForm() {
+    const form = document.querySelector('.form-container');
+    if (form) {
+        form.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'center'
+        });
+    }
+}
+
+function scrollToBenefits() {
+    const benefits = document.getElementById('benefits');
+    if (benefits) {
+        benefits.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+}
+
 // Animation Functions
 function addFadeInAnimations() {
     const observerOptions = {
@@ -314,7 +431,7 @@ function addFadeInAnimations() {
     }, observerOptions);
     
     // Observe sections for fade-in animation
-    const sections = document.querySelectorAll('.left-panel > div, .right-panel');
+    const sections = document.querySelectorAll('section');
     sections.forEach(section => {
         observer.observe(section);
     });
@@ -341,7 +458,7 @@ function showNotification(message, type = 'info') {
         position: fixed;
         top: 20px;
         right: 20px;
-        background: ${type === 'success' ? '#10b981' : type === 'error' ? '#dc2626' : '#3b82f6'};
+        background: ${type === 'success' ? '#10b981' : type === 'error' ? '#dc2626' : '#0ea5e9'};
         color: white;
         padding: 15px 20px;
         border-radius: 12px;
@@ -414,7 +531,7 @@ document.addEventListener('keydown', function(e) {
 // Add touch support for mobile devices
 function addTouchSupport() {
     // Add touch feedback for buttons
-    const buttons = document.querySelectorAll('button, .submit-btn');
+    const buttons = document.querySelectorAll('button, .btn-primary, .btn-secondary');
     buttons.forEach(button => {
         button.addEventListener('touchstart', function() {
             this.style.transform = 'scale(0.98)';
@@ -428,87 +545,3 @@ function addTouchSupport() {
 
 // Initialize touch support
 document.addEventListener('DOMContentLoaded', addTouchSupport);
-
-// Share and Copy Functions
-function sharePage() {
-    if (navigator.share) {
-        navigator.share({
-            title: 'ADHD Clinical Study for Children 4-5 Years Old',
-            text: 'Help us learn about ADHD in kids! Check out this clinical study for children aged 4-5 years.',
-            url: window.location.href
-        }).then(() => {
-            showNotification(
-                currentLanguage === 'en' 
-                    ? 'Thank you for sharing!' 
-                    : '¡Gracias por compartir!',
-                'success'
-            );
-        }).catch((error) => {
-            console.log('Error sharing:', error);
-            copyLink();
-        });
-    } else {
-        copyLink();
-    }
-}
-
-function copyLink() {
-    const url = window.location.href;
-    
-    if (navigator.clipboard) {
-        navigator.clipboard.writeText(url).then(() => {
-            showNotification(
-                currentLanguage === 'en' 
-                    ? 'Link copied to clipboard!' 
-                    : '¡Enlace copiado al portapapeles!',
-                'success'
-            );
-        }).catch((error) => {
-            console.log('Error copying:', error);
-            fallbackCopyTextToClipboard(url);
-        });
-    } else {
-        fallbackCopyTextToClipboard(url);
-    }
-}
-
-function fallbackCopyTextToClipboard(text) {
-    const textArea = document.createElement("textarea");
-    textArea.value = text;
-    textArea.style.top = "0";
-    textArea.style.left = "0";
-    textArea.style.position = "fixed";
-    textArea.style.opacity = "0";
-    
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-    
-    try {
-        const successful = document.execCommand('copy');
-        if (successful) {
-            showNotification(
-                currentLanguage === 'en' 
-                    ? 'Link copied to clipboard!' 
-                    : '¡Enlace copiado al portapapeles!',
-                'success'
-            );
-        } else {
-            showNotification(
-                currentLanguage === 'en' 
-                    ? 'Unable to copy link. Please copy manually.' 
-                    : 'No se pudo copiar el enlace. Por favor copia manualmente.',
-                'error'
-            );
-        }
-    } catch (err) {
-        showNotification(
-            currentLanguage === 'en' 
-                ? 'Unable to copy link. Please copy manually.' 
-                : 'No se pudo copiar el enlace. Por favor copia manualmente.',
-            'error'
-        );
-    }
-    
-    document.body.removeChild(textArea);
-}
