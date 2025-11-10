@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const savedLang = localStorage.getItem('preferredLanguage');
         if (savedLang) {
             currentLanguage = savedLang;
-            updateLanguage(savedLang);
         }
+        updateLanguage(currentLanguage);
         hideLanguageModal();
     }
     
@@ -68,7 +68,13 @@ function updateLanguage(lang) {
     // Update current language indicator
     const currentLangSpan = document.getElementById('currentLang');
     if (currentLangSpan) {
-        currentLangSpan.textContent = lang.toUpperCase();
+        // When language is English, show "Change to Spanish" in Spanish
+        // When language is Spanish, show "Change to English" in English
+        if (lang === 'en') {
+            currentLangSpan.textContent = 'Cambiar a Español';
+        } else {
+            currentLangSpan.textContent = 'Change to English';
+        }
     }
     
     // Update form placeholders and options
@@ -287,7 +293,7 @@ function validateField(e) {
     // Age validation
     if (fieldName === 'childAge' && value) {
         const age = parseInt(value);
-        if (isNaN(age) || age < 4 || age > 5) {
+        if (isNaN(age) || age < 10 || age > 17) {
             showFieldError(field, getErrorMessage('age', fieldName));
             return false;
         }
@@ -357,13 +363,13 @@ function getErrorMessage(type, fieldName) {
             required: 'This field is required',
             email: 'Please enter a valid email address',
             phone: 'Please enter a valid phone number',
-            age: 'Please select a valid age (4-5 years)'
+            age: 'Please select a valid age (10-17 years)'
         },
         es: {
             required: 'Este campo es obligatorio',
             email: 'Por favor ingresa una dirección de correo válida',
             phone: 'Por favor ingresa un número de teléfono válido',
-            age: 'Por favor selecciona una edad válida (4-5 años)'
+            age: 'Por favor selecciona una edad válida (10-17 años)'
         }
     };
     
